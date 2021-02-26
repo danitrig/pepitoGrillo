@@ -38,11 +38,30 @@ public class Tarea3 {
             temp0 = miArray1[pos + 1];
             System.out.println("temp: " + temp0);
         }
-        if (n%2==1){
-            pos = miArray1.length/2;
+        if (n % 2 == 1) {
+            pos = miArray1.length / 2;
             temp1 = (miArray1[pos]);
-            System.out.println("temp: "+ temp1);
+            System.out.println("temp: " + temp1);
         }
     }
 
+    private static void rellenaArray(int[] pArray) {
+        for (int i = 0; i < pArray.length; i++) {
+            pArray[i] = (int) (Math.random() * 50);
+        }
+    }
+
+    private static void organizarPendientes(int[] pArray) {
+        int copiaTemporal;
+
+        for (int i = 0; i < (pArray.length - 1); i++) {
+            for (int j = i + 1; j < pArray.length; j++) {
+                if (pArray[i] > pArray[j]) {
+                    copiaTemporal = pArray[j];
+                    pArray[j] = pArray[i];
+                    pArray[i] = copiaTemporal;
+                }
+            }
+        }
+    }
 }
