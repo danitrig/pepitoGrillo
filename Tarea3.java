@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Daniel
  * @version 1.0
- * @see Tarea 3. Refactoriza, documenta y GIT - Entornos de desarrollo
+ *
  */
 public class Tarea3 {
 
@@ -22,17 +22,18 @@ public class Tarea3 {
          * @param elementos Declaración de un entero para establecer los
          * elementos de miArray1.
          */
-        int elementos = 0;
+        int elementos;
         Scanner teclado = new Scanner(System.in);
-        int[] miArray1 = new int[elementos];
+        int[] miArray1;
 
         System.out.println("¿Cuántos elementos debe contener el array?");
         elementos = teclado.nextInt();
+        miArray1 = new int[elementos];
 
         //Llamada al método que inicializa el array.
         rellenaArray(miArray1);
         //Llamada al método que ordena el array de menor a mayor.
-        organizarPendientes(miArray1);
+        organizaraArray(miArray1);
 
         //Condicionales, en función si el número de elementos del array es par o impar.
         if (miArray1.length % 2 == 0) {
@@ -53,15 +54,16 @@ public class Tarea3 {
         }
     }
 
-    private static void organizarPendientes(int[] pArray) {
+    private static void organizaraArray(int[] pArray) {
         /**
          * Este método se encarga de recorrer el array y mostrar cada una de sus
          * posiciones por pantalla.
-         * 
-         * @param int copiaTemporal Declaración de un entero donde iremos copiando
-         * el contenido de una posición para que no se pierda al moverla.
+         *
+         * @param int copiaTemporal Declaración de un entero donde iremos
+         * copiando el contenido de una posición para que no se pierda al
+         * moverla.
          */
-        
+
         int copiaTemporal;
         for (int i = 0; i < (pArray.length - 1); i++) {
             for (int j = i + 1; j < pArray.length; j++) {
